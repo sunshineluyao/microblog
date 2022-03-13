@@ -1,0 +1,12 @@
+type Message = 
+ record {
+   "text": text;
+   time: int;
+ };
+service : {
+  follow: (principal) -> ();
+  follows: () -> (vec principal) query;
+  post: (text) -> ();
+  posts: () -> (vec Message) query;
+  timeline: () -> (vec Message);
+}
